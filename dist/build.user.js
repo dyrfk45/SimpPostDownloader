@@ -16,7 +16,6 @@
 // @require https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js
 // @require https://raw.githubusercontent.com/geraintluff/sha256/gh-pages/sha256.min.js
 // @connect self
-// @connect simpcity.su
 // @connect coomer.st
 // @connect box.com
 // @connect boxcloud.com

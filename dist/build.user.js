@@ -9,7 +9,7 @@
 // @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/SGL/dist/build.user.js
 // @icon https://simp4.host.church/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
-// @match https://shesgotleaks.com/threads/*
+// @match https://shesgotleaks.pk/threads/*
 // @require https://unpkg.com/@popperjs/core@2
 // @require https://unpkg.com/tippy.js@6
 // @require https://unpkg.com/file-saver@2.0.4/dist/FileSaver.min.js
@@ -691,7 +691,7 @@ const parsers = {
             });
 
             // Remove thread links.
-            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://shesgotleaks.com/threads"]')]
+            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://shesgotleaks.pk/threads"]')]
                 .map(a => a.parentNode.parentNode.parentNode.parentNode)
                 .forEach(i => i.remove());
 
@@ -3682,10 +3682,10 @@ const resolvers = [
             if (!url.startsWith('/')) url = '/' + url;
 
             if (url.startsWith('/attachments/') || url.startsWith('/data/video/')) {
-                return `https://shesgotleaks.com${url}`;
+                return `https://shesgotleaks.pk${url}`;
             }
 
-            return `https://shesgotleaks.com${url}`;
+            return `https://shesgotleaks.pk${url}`;
         },
     ],
     [[/(thumbs|images)(\d+)?.imgbox.com\//, /:!imgbox.com\/g\//], url => url.replace(/_t\./gi, '_o.').replace(/thumbs/i, 'images')],
@@ -4834,7 +4834,7 @@ const request = GM_xmlhttpRequest({
 
                         if (url.includes('pixeldrain.com')) {
                             basename = response.responseHeaders.match(/^content-disposition.+filename=(.+)$/im)[1].replace(/"/g, '');
-                        } else if (url.includes('https://shesgotleaks.com/attachments/')) {
+                        } else if (url.includes('https://shesgotleaks.pk/attachments/')) {
                             basename = filename ? filename.name : h.basename(url).replace(/(.*)-(.{3,4})\.\d*$/i, '$1.$2');
                         } else if (url.includes('kemono.cr')) {
                             basename = filename

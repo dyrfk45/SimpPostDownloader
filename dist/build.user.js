@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection,JSUnresolvedVariable,JSUnresolvedFunction,TypeScriptUMDGlobal,JSUnusedGlobalSymbols
 // ==UserScript==
-// @name XenForoPostDownloader
+// @name SGLDownloader
 // @namespace https://github.com/dyrfk45
 // @author SkyCloudDev
 // @description Downloads images and videos from posts

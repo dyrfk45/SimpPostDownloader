@@ -5,8 +5,8 @@
 // @author SkyCloudDev
 // @description Downloads images and videos from posts
 // @version 3.17
-// @updateURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
-// @downloadURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
+// @updateURL https://github.com/dyrfk45/SimpPostDownloader/raw/main/dist/build.user.js
+// @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/main/dist/build.user.js
 // @icon https://simp4.host.church/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
 // @match https://shesgotleaks.pk/threads/*
@@ -1028,7 +1028,7 @@ const parsers = {
                 .map(a => a.parentNode.parentNode.parentNode.parentNode)
                 .forEach(i => i.remove());
 
-            // Prevent duplicate detection: Simpcity attachment links often wrap a JPGX preview image.
+            // Prevent duplicate detection: shesgotleaks attachment links often wrap a JPGX preview image.
             // For parsing only, remove the preview <img> inside attachment links so we don't count/download it twice.
             try {
                 messageContentClone.querySelectorAll('a[href*="/attachments/"] img').forEach((img) => img.remove());
@@ -4345,7 +4345,7 @@ if (page === 1) {
             // If it's already absolute, keep it (don't rewrite hosts).
             if (/^https?:\/\//i.test(url)) return url;
 
-            // Otherwise it's a path; prefix with Simpcity origin.
+            // Otherwise it's a path; prefix with shesgotleaks origin.
             if (!url.startsWith('/')) url = '/' + url;
 
             if (url.startsWith('/attachments/') || url.startsWith('/data/video/')) {
@@ -7263,7 +7263,7 @@ const isView = /https?:\/\/(?:www\.)?filester\.me\/d\//i.test(String(url || ''))
                             basename =
                                 parseDispositionFilename(rh) ||
                                 (filename ? filename.name : h.basename(url).replace(/\?.*/, '').replace(/#.*/, ''));
-                        } else if (url.includes('https://simpcity.su/attachments/')) {
+                        } else if (url.includes('https://shesgotleaks.pk/attachments/')) {
                             basename = filename ? filename.name : h.basename(url).replace(/(.*)-(.{3,4})\.\d*$/i, '$1.$2');
                         } else if (url.includes('kemono.cr')) {
                             basename = filename

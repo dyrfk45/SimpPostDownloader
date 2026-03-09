@@ -5,8 +5,8 @@
 // @author SkyCloudDev
 // @description Downloads images and videos from posts
 // @version 3.17
-// @updateURL https://github.com/dyrfk45/SimpPostDownloader/raw/main/dist/build.user.js
-// @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/main/dist/build.user.js
+// @updateURL https://github.com/dyrfk45/SimpPostDownloader/raw/SGL/dist/build.user.js
+// @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/SGL/dist/build.user.js
 // @icon https://simp4.host.church/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
 // @match https://shesgotleaks.pk/threads/*

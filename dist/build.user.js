@@ -4,7 +4,7 @@
 // @namespace https://github.com/dyrfk45
 // @author SkyCloudDev
 // @description Downloads images and videos from posts
-// @version 3.17
+// @version 3.17.1
 // @updateURL https://github.com/dyrfk45/SimpPostDownloader/raw/SGL/dist/build.user.js
 // @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/SGL/dist/build.user.js
 // @icon https://simp4.host.church/simpcityIcon192.png
@@ -1976,7 +1976,7 @@ const hosts = [
     ['Bunkr:Albums', [/bunkrr?r?\.(ac|ax|black|cat|ci|cr|fi|is|media|nu|pk|ph|ps|red|ru|se|si|site|sk|ws|ru|su|org)\/a\//]],
     ['Give.xxx:Profiles', [/give.xxx\/[~an@_-]+/]],
     ['Pixeldrain:', [/(focus\.)?(?:pixeldrain\.com|pixeldrain\.net|pixeldra\.in)\/[lu]\//]],
-    ['Gofile:', [/gofile.io\/d/]],
+  //temporarily disable gofile  ['Gofile:', [/gofile.io\/d/]],
     ['Filester:links', [/filester\.me\/d\//]],
     ['Filester:albums', [/filester\.me\/f\/[~an@-_.]+<no_qs>/]],
     ['Box.com:', [/m\.box\.com\//]],

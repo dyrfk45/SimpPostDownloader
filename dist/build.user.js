@@ -9,13 +9,14 @@
 // @downloadURL https://github.com/dyrfk45/SimpPostDownloader/raw/ZV/dist/build.user.js
 // @icon https://simp4.cuckcapital.cr/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
-// @match https://zoovilleforum.net/threads/*
+// @match https://*.zoovilleforum.net/threads/*
 // @require https://unpkg.com/@popperjs/core@2
 // @require https://unpkg.com/tippy.js@6
 // @require https://unpkg.com/file-saver@2.0.4/dist/FileSaver.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js
 // @require https://raw.githubusercontent.com/geraintluff/sha256/gh-pages/sha256.min.js
 // @connect self
+// @connect zoovilleforum.net
 // @connect coomer.st
 // @connect box.com
 // @connect boxcloud.com

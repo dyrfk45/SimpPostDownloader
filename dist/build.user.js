@@ -1,12 +1,12 @@
 // noinspection SpellCheckingInspection,JSUnresolvedVariable,JSUnresolvedFunction,TypeScriptUMDGlobal,JSUnusedGlobalSymbols
 // ==UserScript==
 // @name XenForoPostDownloader
-// @namespace https://github.com/courtneydax
-// @author SkyCloudDev
+// @namespace https://github.com/dyrfk45
+// @author SkyCloudDev modified by dyrfk45
 // @description Downloads images and videos from posts
 // @version 3.19
-// @updateURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
-// @downloadURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
+// @updateURL https://github.com/dyrfk45/ForumPostDownloader/raw/baseChanges/dist/build.user.js
+// @downloadURL https://github.com/dyrfk45/ForumPostDownloader/raw/baseChanges/dist/build.user.js
 // @icon https://simp4.cuckcapital.cr/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
 // @match https://simpcity.cr/threads/*
@@ -8040,7 +8040,7 @@ const selectedPosts = [];
 
         h.elements('.message-attribution-opposite').forEach(post => {
             const settings = {
-                zipped: true,
+                zipped: false,
                 flatten: false,
                 generateLinks: false,
                 generateLog: false,

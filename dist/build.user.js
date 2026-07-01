@@ -5,17 +5,18 @@
 // @author SkyCloudDev modified by dyrfk45
 // @description Downloads images and videos from posts
 // @version 3.19
-// @updateURL https://github.com/dyrfk45/ForumPostDownloader/raw/SGL/dist/build.user.js
-// @downloadURL https://github.com/dyrfk45/ForumPostDownloader/raw/SGL/dist/build.user.js
+// @updateURL https://github.com/dyrfk45/ForumPostDownloader/raw/ZV/dist/build.user.js
+// @downloadURL https://github.com/dyrfk45/ForumPostDownloader/raw/ZV/dist/build.user.js
 // @icon https://simp4.cuckcapital.cr/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
-// @match https://shesgotleaks.pk/threads/*
+// @match https://*.zoovilleforum.net/threads/*
 // @require https://unpkg.com/@popperjs/core@2
 // @require https://unpkg.com/tippy.js@6
 // @require https://unpkg.com/file-saver@2.0.4/dist/FileSaver.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js
 // @require https://raw.githubusercontent.com/geraintluff/sha256/gh-pages/sha256.min.js
 // @connect self
+// @connect zoovilleforum.net
 // @connect coomer.st
 // @connect box.com
 // @connect boxcloud.com
@@ -1051,7 +1052,7 @@ const parsers = {
             });
 
             // Remove thread links.
-            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://shesgotleaks.pk/threads"]')]
+            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://zoovilleforum.net/threads"]')]
                 .map(a => a.parentNode.parentNode.parentNode.parentNode)
                 .forEach(i => i.remove());
 
@@ -4427,10 +4428,10 @@ if (page === 1) {
             if (!url.startsWith('/')) url = '/' + url;
 
             if (url.startsWith('/attachments/') || url.startsWith('/data/video/')) {
-                return `https://shesgotleaks.pk${url}`;
+                return `https://zoovilleforum.net${url}`;
             }
 
-            return `https://shesgotleaks.pk${url}`;
+            return `https://zoovilleforum.net${url}`;
         },
     ],
     [[/(thumbs|images)(\d+)?.imgbox.com\//, /:!imgbox.com\/g\//], url => url.replace(/_t\./gi, '_o.').replace(/thumbs/i, 'images')],
@@ -7350,7 +7351,7 @@ const isView = /https?:\/\/(?:www\.)?filester\.(me|sh|si|gg)\/d\//i.test(String(
                             basename =
                                 parseDispositionFilename(rh) ||
                                 (filename ? filename.name : h.basename(url).replace(/\?.*/, '').replace(/#.*/, ''));
-                        } else if (url.includes('https://shesgotleaks.pk/attachments/')) {
+                        } else if (url.includes('https://zoovilleforum.net/attachments/')) {
                             basename = filename ? filename.name : h.basename(url).replace(/(.*)-(.{3,4})\.\d*$/i, '$1.$2');
                         } else if (url.includes('kemono.cr')) {
                             basename = filename
@@ -7902,7 +7903,7 @@ const registerPostReaction = postFooter => {
     if (!hasReaction) {
         const reactionAnchor = postFooter.querySelector('.reaction--imageHidden');
         if (reactionAnchor) {
-            reactionAnchor.setAttribute('href', reactionAnchor.getAttribute('href').replace('_id=1', '_id=9'));
+            reactionAnchor.setAttribute('href', reactionAnchor.getAttribute('href').replace('_id=1', '_id=2'));
             reactionAnchor.click();
         }
     }

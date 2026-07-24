@@ -2138,7 +2138,7 @@ const hosts = [
     ['Bunkr:Albums', [/bunkrr?r?\.(ac|ax|black|cat|ci|cr|fi|is|media|nu|pk|ph|ps|red|ru|se|si|site|sk|ws|ru|su|org)\/a\//]],
     ['Give.xxx:Profiles', [/give.xxx\/[~an@_-]+/]],
     ['Pixeldrain:', [/(focus\.)?(?:pixeldrain\.com|pixeldrain\.net|pixeldra\.in)\/[lu]\//]],
-    //['Gofile:', [/gofile.io\/d/]],
+    ['Gofile:', [/gofile.io\/d/]],
     ['Filester:links', [/filester\.(me|sh|si|gg)\/d\//]],
     ['Filester:albums', [/filester\.(me|sh|si|gg)\/f\/[~an@-_.]+<no_qs>/]],
     ['Box.com:', [/m\.box\.com\//]],

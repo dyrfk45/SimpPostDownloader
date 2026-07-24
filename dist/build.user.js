@@ -5,8 +5,8 @@
 // @author SkyCloudDev
 // @description Downloads images and videos from posts
 // @version 3.21
-// @updateURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
-// @downloadURL https://github.com/SkyCloudDev/ForumPostDownloader/raw/main/dist/build.user.js
+// @updateURL https://github.com/dyrfk45/ForumPostDownloader/raw/baseChanges/dist/build.user.js
+// @downloadURL https://github.com/dyrfk45/ForumPostDownloader/raw/baseChanges/dist/build.user.js
 // @icon https://simp4.cuckcapital.cr/simpcityIcon192.png
 // @license WTFPL; http://www.wtfpl.net/txt/copying/
 // @match https://simpcity.cr/threads/*
@@ -22,7 +22,7 @@
 // @require https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js
 // @require https://raw.githubusercontent.com/geraintluff/sha256/gh-pages/sha256.min.js
 // @connect self
-// @connect simpcity.su
+// @connect simpcity.cr
 // @connect coomer.st
 // @connect box.com
 // @connect boxcloud.com
@@ -1179,11 +1179,11 @@ const parsers = {
             });
 
             // Remove thread links.
-            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://simpcity.su/threads"]')]
+            [...messageContentClone.querySelectorAll('.contentRow-header > a[href^="https://simpcity.cr/threads"]')]
                 .map(a => a.parentNode.parentNode.parentNode.parentNode)
                 .forEach(i => i.remove());
 
-            // Prevent duplicate detection: Simpcity attachment links often wrap a JPGX preview image.
+            // Prevent duplicate detection: shesgotleaks attachment links often wrap a JPGX preview image.
             // For parsing only, remove the preview <img> inside attachment links so we don't count/download it twice.
             try {
                 messageContentClone.querySelectorAll('a[href*="/attachments/"] img').forEach((img) => img.remove());
@@ -2101,7 +2101,7 @@ let processing = [];
  *
  */
 const hosts = [
-    ['Simpcity:Attachments', [/(\/attachments\/|\/data\/video\/)/]],
+    ['Shesgotleaks:Attachments', [/(\/attachments\/|\/data\/video\/)/]],
     ['Coomer:Profiles', [/coomer.st\/[~an@._-]+\/user/]],
     ['Coomer:image', [/(\w+\.)?coomer.st\/(data|thumbnail)/]],
     ['JPGX:image', [/(simp\d+\.)?(cuckcapital\.cr|jpg\d?\.(church|fish|fishing|pet|su|cr))\/(?!(img\/|a\/|album\/))/, /jpe?g\d\.(church|fish|fishing|pet|su|cr)(\/a\/|\/album\/)[~an@-_.]+<no_qs>/]],
@@ -2138,7 +2138,7 @@ const hosts = [
     ['Bunkr:Albums', [/bunkrr?r?\.(ac|ax|black|cat|ci|cr|fi|is|media|nu|pk|ph|ps|red|ru|se|si|site|sk|ws|ru|su|org)\/a\//]],
     ['Give.xxx:Profiles', [/give.xxx\/[~an@_-]+/]],
     ['Pixeldrain:', [/(focus\.)?(?:pixeldrain\.com|pixeldrain\.net|pixeldra\.in)\/[lu]\//]],
-    ['Gofile:', [/gofile.io\/d/]],
+    //['Gofile:', [/gofile.io\/d/]],
     ['Filester:links', [/filester\.(me|sh|si|gg)\/d\//]],
     ['Filester:albums', [/filester\.(me|sh|si|gg)\/f\/[~an@-_.]+<no_qs>/]],
     ['Box.com:', [/m\.box\.com\//]],
@@ -4664,14 +4664,14 @@ if (page === 1) {
             // If it's already absolute, keep it (don't rewrite hosts).
             if (/^https?:\/\//i.test(url)) return url;
 
-            // Otherwise it's a path; prefix with Simpcity origin.
+            // Otherwise it's a path; prefix with shesgotleaks origin.
             if (!url.startsWith('/')) url = '/' + url;
 
             if (url.startsWith('/attachments/') || url.startsWith('/data/video/')) {
-                return `https://simpcity.su${url}`;
+                return `https://simpcity.cr${url}`;
             }
 
-            return `https://simpcity.su${url}`;
+            return `https://simpcity.cr${url}`;
         },
     ],
     [[/(thumbs|images)(\d+)?.imgbox.com\//, /:!imgbox.com\/g\//], url => url.replace(/_t\./gi, '_o.').replace(/thumbs/i, 'images')],
@@ -7626,7 +7626,7 @@ const isView = /https?:\/\/(?:www\.)?filester\.(me|sh|si|gg)\/d\//i.test(String(
                             basename =
                                 parseDispositionFilename(rh) ||
                                 (filename ? filename.name : h.basename(url).replace(/\?.*/, '').replace(/#.*/, ''));
-                        } else if (url.includes('https://simpcity.su/attachments/')) {
+                        } else if (url.includes('https://simpcity.cr/attachments/')) {
                             basename = filename ? filename.name : h.basename(url).replace(/(.*)-(.{3,4})\.\d*$/i, '$1.$2');
                         } else if (url.includes('kemono.cr')) {
                             basename = filename
@@ -8332,7 +8332,7 @@ const selectedPosts = [];
 
         h.elements('.message-attribution-opposite').forEach(post => {
             const settings = {
-                zipped: true,
+                zipped: false,
                 flatten: false,
                 generateLinks: false,
                 generateLog: false,
